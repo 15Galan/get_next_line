@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 10:58:34 by antgalan          #+#    #+#             */
-/*   Updated: 2023/07/03 23:37:54 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/07/14 13:52:17 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,10 @@
 # endif
 
 /**
- * @brief	Locates the first occurrence of 'c' (converted to a char) in the
- * 			string pointed to by 'str'.
+ * @brief	Locates the first occurrence of a character in a string.
  * 			The null-terminating character is considered to be part of the
- * 			string; therefore if 'c' is '\0', the functions locate the
- * 			terminating '\0'.
+ * 			string; therefore if the character is '\0', the functions locate
+ *          the terminating '\0'.
  * 
  * @param str	The string to be searched.
  * @param c		The character to be located.
