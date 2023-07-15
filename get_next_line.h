@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 10:58:34 by antgalan          #+#    #+#             */
-/*   Updated: 2023/07/14 13:52:17 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/07/15 19:21:22 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,34 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
  *			NULL if there is nothing else to read or an error occurred.
  */
 char	*get_next_line(int fd);
+
+/**
+ * @brief	Deletes the first line from the given string.
+ *
+ * @param str	String to delete the first line from.
+ *
+ * @return	Pointer to the updated string.
+ */
+char	*delete_line(char *content);
+
+/**
+ * @brief	Reads a single line from the given string.
+ *
+ * @param str	String containing the content to read from.
+ *
+ * @return	Pointer to a string containing the line read from the content;
+ *			NULL if there is nothing else to read.
+ */
+char	*get_one_line(char *content);
+
+/**
+ * @brief	Updates past readed content with actual readed content.
+ *
+ * @param str		String with past readed content.
+ * @param buffer	String with actual readed content.
+ *
+ * @return	Pointer to the cleaned content stack.
+ */
+char	*update_readed(char *str, char *buffer);
 
 #endif
