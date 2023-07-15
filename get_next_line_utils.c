@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 10:58:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/07/03 23:57:53 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/07/15 19:34:32 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 char	*ft_strchr(const char *str, int c)
 {
+	if (!str)
+		return (NULL);
 	while (*str != (char) c)
 	{
 		if (!*str++)
