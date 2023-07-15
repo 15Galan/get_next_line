@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 10:58:34 by antgalan          #+#    #+#             */
-/*   Updated: 2023/07/16 01:45:39 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/07/16 01:45:59 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*get_one_line(char *str)
 
 char	*get_next_line(int fd)
 {
-	static char	*readed = NULL;
+	static char	*readed[1024] = {NULL};
 	char		buffer[BUFFER_SIZE + 1];
 	char		*line;
 	int			bytes;
@@ -49,18 +49,18 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	bytes = 1;
-	while (!ft_strchr(readed, '\n') && 0 < bytes)
+	while (!ft_strchr(readed[fd], '\n') && 0 < bytes)
 	{
 		bytes = read(fd, buffer, BUFFER_SIZE);
 		if (bytes < 0)
-			return (free(readed), readed = NULL, NULL);
+			return (free(readed[fd]), readed[fd] = NULL, NULL);
 		buffer[bytes] = '\0';
-		readed = update_readed(readed, buffer);
-		if (!readed)
+		readed[fd] = update_readed(readed[fd], buffer);
+		if (!readed[fd])
 			return (NULL);
 	}
-	line = get_one_line(readed);
-	readed = delete_line(readed);
+	line = get_one_line(readed[fd]);
+	readed[fd] = delete_line(readed[fd]);
 	return (line);
 }
 
