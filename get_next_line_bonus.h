@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 10:58:34 by antgalan          #+#    #+#             */
-/*   Updated: 2023/07/16 01:40:09 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/07/16 14:10:39 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 /**
  * @brief	Reads from a file descriptor, reading BUFFER_SIZE bytes at a time
  *			until a newline is found, or the end of the file is reached.
-            It works with multiple file descriptors without losing the reading.
+ *          It works with multiple file descriptors without losing the reading.
  *
  * @param fd	File descriptor to read from.
  *
